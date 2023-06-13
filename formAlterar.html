@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Aang | Alterar</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}" >
+</head>
+
+<body>
+  <div id="doc3" class="yui-t7">
+  <div id="hd">
+    <div id="header">
+        <center>
+            <ul>
+                <a href="{{ url_for('index')}}">Menu</a>
+                <a href="{{ url_for('cadastrar')}}">Cadastrar</a>
+                <a href="{{ url_for('excluir')}}">Excluir</a>
+                <a href="{{ url_for('classificacao')}}">Classificar</a>
+            </ul>
+        </center>
+<img src="../static/logo.png" alt="Logo Aang" width="170" height="170">
+<h1>Artmosfera: Alterar Amostras</h1>
+</div>
+<div id="bd">
+  <div id="yui-main">
+    <div class="yui-b">
+      <div class="yui-gc">
+        <div class="yui-u first">
+          <div class="content-cad">
+            <center><h2>Preencha os campos fazendo as alterações de valores das amostras:</h2></center>
+            <form class="formAdd" action="{{ url_for('alterar') }}" method="POST">
+              <input type="hidden" name="id" value="{{ item[0] }}">
+              <br>
+              <h3>MP10:</h3>
+              <input id="mp10" name="mp10" type="text" value="{{ item[1] }}">
+              <br>
+              <h3>MP2,5:</h3>
+              <input id="mp25" name="mp25" type="text"value="{{ item[2] }}">
+              <br>
+              <h3>O3:</h3>
+              <input id="o3" name="o3" type="text"value="{{ item[3] }}">
+              <br>
+              <h3>CO:</h3>
+              <input id="co" name="co" type="text"value="{{ item[4] }}">
+              <br>
+              <h3>NO2:</h3>
+              <input id="no2" name="no2" type="text"value="{{ item[5] }}">
+              <br>
+              <h3>SO2:</h3>
+              <input id="so2" name="so2" type="text"value="{{ item[6] }}">
+              <br><br>
+              <center>
+                <button type="submit"><h4>Alterar Amostra</h4></button>
+                <button><h4><a href="{{ url_for('alterar')}}">Cancelar</a></h4></button>
+              </center>
+            </form>
+          </div>
+        </div>
+        <div class="yui-u">
+          <div class="content-cad">
+            <center>
+              <h3>Valores cadastrados anteriormente:</h3>
+            </center>
+
+            <h4>Amostra</h4>
+            <text>{{item[0]}}</text>
+            <hr>
+            <h4>MP10: Partículas Inaláveis</h4>
+            <text>{{ item[1] }}</text>
+            <hr>
+            <h4>MP2,5: Partículas Inaláveis Finas</h4>
+            <text>{{ item[2] }}</text>
+            <hr>
+            <h4>O3: Ozônio</h4>
+            <text>{{ item[3] }}</text>
+            <hr>
+            <h4>CO: Monóxido de Carbono</h4>
+            <text>{{ item[4] }}</text>
+            <hr>
+            <h4>NO2: Dióxido de Nitrogênio</h4>
+            <text>{{ item[5] }}</text>
+            <hr>
+            <h4>SO2: Dióxido de Enxofre</h4>
+            <text>{{ item[6] }}</text>
+            <hr>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="ft">
+  <div id="footer">
+    <footer>
+      <div class="column">
+        <h3>Menu de Amostras</h3>
+        <ul>
+          <a href="{{ url_for('index')}}">Menu</a>
+          <a href="{{ url_for('cadastrar')}}">Cadastrar</a>
+          <li><a href="{{ url_for('excluir')}}">Excluir</a></li>
+          <li><a href="{{ url_for('classificacao')}}">Classificar</a></li>
+          <a href="{{ url_for('sobre')}}">Sobre</a>
+        </ul>
+      </div>
+      <div class="column">
+        <h3>Entre em Contato</h3>
+        <p>Email: timepi1@puccampinas.edu.br</p>
+        <p>Telefone: (12) 93456-7890</p>
+        <img src="../static/logo.png" alt="LogoAang">
+      </div>
+    </footer>
+  </div>
+</div>
+<center><p>&copy; 2023 Pontificia Universidade Catolica de Campinas. All rights reserved.</p></center>
+</div>
+</body>
+</html>

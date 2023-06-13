@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>Aang | Criptografia</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+	<div id="doc3" class="yui-t7">
+		<div id="hd">
+			<div id="header">
+				<center>
+					<ul>
+						<a href="{{ url_for('index')}}">Menu</a>
+						<a href="{{ url_for('cadastrar')}}">Adicionar</a>
+                		<a href="{{ url_for('excluir')}}">Excluir</a>
+                		<a href="{{ url_for('alterar')}}">Alterar</a>
+                		<a href="{{ url_for('classificacao')}}">Classificar</a>
+						<a href="{{ url_for('sobre')}}">Sobre</a>
+					</ul>
+				</center>
+				<img src="../static/logo.png" alt="Logo Aang" width="170" height="170">
+				<h1>Artmosfera: Conheça nossa segurança</h1>
+			</div>
+			<div id="bd">
+				<div id="yui-main">
+					<div class="yui-b">
+						<div class="yui-gc">
+								<div class="content">
+									<center>
+										<h1> Criptografia dos dados: </h1><br>
+										<h3>
+											{{ dadosCriptografados }}
+										</h3>
+								</div>
+							</div>
+							</div>
+						</div>
+					</div>
+					<div id="ft">
+						<div id="footer">
+							<footer>
+								<div class="column">
+									<h3>Menu de Amostras</h3>
+									<ul>
+										<li><a href="#">Home</a></li>
+										<li><a href="Cadastrar.html">Adicionar</a></li>
+										<li><a href="Alterar.html">Alterar</a></li>
+										<li><a href="Excluir.html">Excluir</a></li>
+										<li><a href="Classificacao.html">Classificar</a></li>
+										<li><a href="Sobre.html">Sobre</a></li>
+									</ul>
+								</div>
+								<div class="column">
+									<h3>Entre em Contato</h3>
+									<p>Email: timepi1@puccampinas.edu.br</p>
+									<p>Telefone: (12) 93456-7890</p>
+									<img src="../static/logo.png" alt="LogoAang">
+								</div>
+							</footer>
+						</div>
+					</div>
+				</div>
+				<center>
+					<p>&copy; 2023 Pontificia Universidade Catolica de Campinas. All rights reserved.</p>
+				</center>
+			</div>
+		</div>
+</body>
+
+</html>

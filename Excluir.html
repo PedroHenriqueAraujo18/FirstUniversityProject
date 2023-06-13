@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Aang | Excluir</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}" >
+</head>
+
+<body>
+  <div id="doc3" class="yui-t7">
+  <div id="hd">
+    <div id="header">
+        <center>
+            <ul>
+				<a href="{{ url_for('index')}}">Menu</a>
+                <a href="{{ url_for('cadastrar')}}">Cadastrar</a>
+                <a href="{{ url_for('alterar')}}">Alterar</a>
+                <a href="{{ url_for('classificacao')}}">Classificar</a>
+				<a href="{{ url_for('sobre')}}">Sobre</a>
+            </ul>
+        </center>
+		<img src="../static/logo.png" alt="Logo Aang" width="170" height="170">
+		<h1>Artmosfera: Excluir Amostras</h1>
+	</div>
+  </div>
+  <div id="bd">
+    <div id="yui-main">
+      <div class="yui-b">
+		  <div class="yui-gc">
+          <div class="yui-u first">
+			  <div class="content-cad">
+				<center><h2>Escolha a amostra e clique no botão para excluir.</h2></center>
+				<table class="content-table">
+					<thead>
+						<tr>
+							<th>Amostra</th>
+							<th>MP10</th>
+							<th>MP2,5</th>
+							<th>O3</th>
+							<th>CO</th>
+							<th>NO2</th>
+							<th>SO2</th>
+							<th>SELECIONAR</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for amostra in amostras %}
+							<tr>
+								<td>{{ amostra[0] }}</td>
+								<td>{{ amostra[1] }}</td>
+								<td>{{ amostra[2] }}</td>
+								<td>{{ amostra[3] }}</td>
+								<td>{{ amostra[4] }}</td>
+								<td>{{ amostra[5] }}</td>
+								<td>{{ amostra[6] }}</td>
+								<td>
+									<form action="/excluir" method="post">
+										<input type="hidden" name="id" value="{{ amostra[0] }}">
+										<button type="submit" class="btn btn-default">EXCLUIR</button>
+									</form>
+								</td>
+							</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+				
+			</div>
+		</div>
+		<div class="yui-u">
+			<div class="content">
+				<center><h2>Excluir Amostra:</h2></center>
+				<hr>
+				<h4>ATENÇÃO!</h4>
+				<p>As amostras que forem excluídas não poderão ser recuperadas! Verifique se é a amostra correta com o código. Exclua somente em caso de necessidade, erros ou exceções.</p>
+				<hr>
+			</div>
+		</div>
+	</div>
+  </div>
+</div>
+<div id="ft">
+	<div id="footer">
+	<footer>
+  <div class="column">
+	<h3>Menu de Amostras</h3>
+	<ul>
+		<li><a href="{{ url_for('index')}}">Menu</a></li>
+		<li><a href="{{ url_for('cadastrar')}}">Cadastrar</a></li>
+		<li><a href="{{ url_for('excluir')}}">Excluir</a></li>            
+		<li><a href="{{ url_for('classificacao')}}">Classificar</a></li>
+		<a href="{{ url_for('sobre')}}">Sobre</a>
+	</ul>
+  </div>
+  <div class="column">
+	<h3>Entre em Contato</h3>
+	<p>Email: timepi1@puccampinas.edu.br</p>
+	<p>Telefone: (12) 93456-7890</p>
+	<img src="{{ url_for('static', filename='logo.png') }}" alt="LogoAang">
+  </div>
+</footer>
+	</div>
+	   </div>
+	</div>
+  <center><p>&copy; 2023 Pontificia Universidade Catolica de Campinas. All rights reserved.</p></center>
+  </div>
+</div>
+</body>
+</html>
+

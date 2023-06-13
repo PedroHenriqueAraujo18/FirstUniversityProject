@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Aang | Classificação</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}" >
+</head>
+
+<body>
+  <div id="doc3" class="yui-t7">
+  <div id="hd">
+    <div id="header">
+        <center>
+            <ul>
+				<a href="{{ url_for('index')}}">Menu</a>
+                <a href="{{ url_for('cadastrar')}}">Cadastrar</a>
+                <a href="{{ url_for('excluir')}}">Excluir</a>
+                <a href="{{ url_for('alterar')}}">Alterar</a>
+				<a href="{{ url_for('sobre')}}">Sobre</a>
+            </ul>
+        </center>
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" width="170" height="170">
+        <h1>Artmosfera: Classificação das Amostras</h1>
+    </div>
+  </div>
+  </div>
+
+  <div id="bd">
+    <div id="yui-main">
+      <div class="yui-b">
+		  <div class="yui-gc">
+          <div class="yui-u first">
+        <div class="content-cad">
+			<center><h2>Tabela de amosstras cadastradas</h2></center>
+        <table class="content-table">
+			<thead>
+            <tr>
+                <th>Amostra</th>
+                <th>MP10</th>
+                <th>MP2,5</th>
+                <th>O3</th>
+                <th>CO</th>
+                <th>NO2</th>
+                <th>SO2</th>
+			</tr>
+			</thead>
+            {% for sample_id, tabela in data %}
+    						<tr>
+        						<td>{{ sample_id[0] }}</td>
+        						<td>{{ tabela[1] }}</td>
+        						<td>{{ tabela[2] }}</td>
+        						<td>{{ tabela[3] }}</td>
+        						<td>{{ tabela[5] }}</td>
+        						<td>{{ tabela[4] }}</td>
+        						<td>{{ tabela[6] }}</td>
+    						</tr>
+							{% endfor %}
+        </table>
+		</div>
+      </div>
+    
+    <div class="yui-u">
+            <div class="content">
+				<center>
+					<h2>Média das Amostras</h2>
+					{% for results in resultado %}
+					{{ results }} | 
+					{% endfor %}
+				  </center>
+					  <h2>Qualidade do ar: {{ classificacao['qualidade_ar'] }}</h2>
+					  {% if classificacao['efeitos_saude'] %}
+						  <p>Efeitos na saúde: {{ classificacao['efeitos_saude'] }}</p>
+					  {% endif %}
+			</div>
+         </div>
+        </div>
+      </div>
+    </div>
+</div>
+	<div id="ft">
+		<div id="footer">
+		  <footer>
+			<div class="column">
+			  <h3>Menu de Amostras</h3>
+			  <ul>
+				<li><a href="#">Home</a></li>
+				<li><a href="{{ url_for('cadastrar')}}">Adicionar</a></li>
+				<li><a href="{{ url_for('alterar')}}">Alterar</a></li>
+				<li><a href="{{ url_for('excluir')}}">Excluir</a></li>
+				<li><a href="{{ url_for('classificacao')}}">Classificar</a></li>
+			  </ul>
+			</div>
+			<div class="column">
+			  <h3>Entre em Contato</h3>
+			  <p>Email: timepi1@puccampinas.edu.br</p>
+			  <p>Telefone: (12) 93456-7890</p>
+			  <img src="../static/logo.png" alt="LogoAang">
+			</div>
+		  </footer>
+		</div>
+	  </div>
+	  <center><p>&copy; 2023 Pontificia Universidade Catolica de Campinas. All rights reserved.</p></center>
+	</div>
+	</body>
+	</html>
+	

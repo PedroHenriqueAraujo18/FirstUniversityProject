@@ -1,0 +1,132 @@
+<!-- Site de Layouts: https://www.free-css.com/free-css-layouts/page1 -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Aang | Qualidade do Ar</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}" >
+</head>
+
+<body>
+  <div id="doc3" class="yui-t7">
+  <div id="hd">
+    <div id="header">
+        <center>
+            <ul>
+                <a href="{{ url_for('cadastrar')}}">Cadastrar</a>
+                <a href="{{ url_for('excluir')}}">Excluir</a>
+                <a href="{{ url_for('alterar')}}">Alterar</a>
+                <a href="{{ url_for('classificacao')}}">Classificar</a>
+                <a href="{{ url_for('sobre')}}">Sobre</a>
+                <a href="{{url_for('criptografia')}}">Criptografia</a>
+                <a href="{{ url_for('sair')}}">SAIR</a>
+            </ul>
+        </center>
+        <img src="../static/logo.png" alt="Logo Aang" width="170" height="170">
+        <h1>Artmosfera: Ambientação com Nitrogênio e Gás Oxigênio</h1>
+    </div>
+  </div>
+  </div>
+  <div id="bd">
+    <div id="yui-main">
+      <div class="yui-b">
+        <div class="yui-gc">
+          <div class="yui-u first">
+            <div class="content">
+				<center>
+				<h1> Classificação Atual: Regular</h1><br>
+				<img src="../static/qualidade.PNG" width="780" height="180" style="border: 2px solid">
+				<br><button><h4><a href="{{ url_for('classificacao')}}">Classificar</a></h4></button>
+				</center>
+			</div>
+          </div>
+          <div class="yui-u">
+            <div class="content">
+				<center><h2>Noticias Recentes</h2></center>
+				<hr>
+			    <h4>Poluição no Ar de São Paulo:</h4> 
+					Nos últimos 22 anos, em alguns pontos da cidade
+					o nível de poluição foi 4 vezes maior que o indicado.
+				<hr>
+				<h4>Apenas 13 Países Tiveram Ar Saúdavel:</h4>
+					O relatóro descobriu que a poluição média anual do ar
+					em cerca de 90% dos países. Sendo necessário regulamentos
+					da Organização Mundial da Saúde (OMS).
+				<hr>
+			</div>
+         </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div id="doc3" class="yui-t7">
+  <div id="bd">
+    <div id="yui-main">
+      <div class="yui-b">
+        <div class="yui-gb">
+          <div class="yui-u first">
+            <div class="content">
+				<center>
+					<h3>Adicionar Amostras</h3>
+					<br>
+					<p> Adicione amostras para gerar uma classificacão mais atualizada sobre os efeitos da saude!</p><br>
+					<button><h4><a href="{{ url_for('cadastrar')}}">Adicionar</a></h4></button>
+				</center>
+			</div>
+          </div>
+          <div class="yui-u">
+            <div class="content">
+				<center>
+				<h3>Alterar Amostra</h3>
+				<br>
+				<p> Altere amostras com valores incorretos ou atualize para dados mais precisos!</p><br>
+				<button><h4><a href="{{ url_for('alterar')}}">Alterar</a></h4></button>
+				</center>
+			</div>
+          </div>
+          <div class="yui-u">
+            <div class="content">
+				<center>
+				<h3>Excluir Amostras</h3>
+				<br>
+				<p>
+					Deseja excluir alguma amostra em casos de problemas ou erros? Clique no botao abaixo!
+				</p><br>
+				<button><h4><a href="{{ url_for('excluir')}}">Excluir</a></h4></button>
+				</center>
+			</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="ft">
+      <div id="footer">
+      <footer>
+    <div class="column">
+      <h3>Menu de Amostras</h3>
+      <ul>
+          <li><a href="{{ url_for('index')}}">Menu</a></li>
+          <li><a href="{{ url_for('cadastrar')}}">Cadastrar</a></li>
+          <li><a href="{{ url_for('excluir')}}">Excluir</a></li>            
+          <li><a href="{{ url_for('classificacao')}}">Classificar</a></li>
+      </ul>
+    </div>
+    <div class="column">
+      <h3>Entre em Contato</h3>
+      <p>Email: timepi1@puccampinas.edu.br</p>
+      <p>Telefone: (12) 93456-7890</p>
+      <img src="{{ url_for('static', filename='logo.png') }}" alt="LogoAang">
+    </div>
+  </footer>
+      </div>
+         </div>
+      </div>
+    <center><p>&copy; 2023 Pontificia Universidade Catolica de Campinas. All rights reserved.</p></center>
+    </div>
+  </div>
+  </body>
+  </html>

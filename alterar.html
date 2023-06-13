@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+<html>
+  <head> <!-- CONFIGURAÇÕES DA PÁGINA-->
+    <title>Aang | Alterar</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" >
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}" >
+  </head>
+
+  <body>
+    <!--CABEÇALHO DA PÁGINA [MENU, TITULO, LOGO]-->
+    <div id="doc3" class="yui-t7">
+      <div id="hd">
+        <div id="header">
+          <center>
+          <ul>
+            <!--MENU DA PÁGINA-->
+            <a href="{{ url_for('index')}}">Menu</a>
+            <a href="{{ url_for('cadastrar')}}">Cadastrar</a>
+            <a href="{{ url_for('excluir')}}">Excluir</a>             
+            <a href="{{ url_for('classificacao')}}">Classificar</a>
+            <a href="{{ url_for('sobre')}}">Sobre</a>
+            <!--FIM DO MENU-->
+          </ul>
+          </center>
+          <!--LOGO DA EMPRESA E TITULO-->
+          <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo Aang" width="170" height="170">
+          <h1>Artmosfera: Alterar Amostras</h1>
+        </div>
+        <!--FIM DO CABEÇALHO-->
+        <!--CONTEUDO PRINCIPAL DA PÁGINA-->
+        <div id="bd">
+          <div id="yui-main">
+            <div class="yui-b">
+              <div class="yui-gc">
+                <!--PRIMEIRA PARTE, LADO ESQUERDO-->
+                <div class="yui-u first">
+                  <div class="content-cad">
+                    <center><h2>Escolha a amostra e altere os dados desejados.</h2></center>
+                    <!--TABELA DE AMOSTRAS PARA VISUALIZAR-->
+                    <table class="content-table">
+                      <thead>
+                        <th>Amostra</th>
+                        <th>MP10</th>
+                        <th>MP2,5</th>
+                        <th>O3</th>
+                        <th>CO</th>
+                        <th>NO2</th>
+                        <th>SO2</th>
+                        <th>SELECIONAR</th>
+                      </thead>
+                      <tbody>
+                        {% for item in items %}
+                        <td>{{ item[0] }}</td>
+                        <td>{{ item[1] }}</td>
+                        <td>{{ item[2] }}</td>
+                        <td>{{ item[3] }}</td>
+                        <td>{{ item[4] }}</td>
+                        <td>{{ item[5] }}</td>
+                        <td>{{ item[6] }}</td>
+                        <td>
+                        <!--FORMULARIO COM BOTÕES DE ALTERAR E CANCELAR-->
+                        <form action="/alterar" method="GET">
+                          <input type="hidden" name="id" value="{{ item[0] }}">
+                          <input type="submit" value="Alterar">
+                        </form>
+                        </td>
+                        {% endfor %}           
+                     </tbody>
+                    </table>
+                    <!--FIM DA TABELA DE AMOSTRAS-->
+                  </div>
+                </div>
+                <!--FIM DO PRIMEIRO CONTEUDO-->
+
+                <!--CONTEÚDO SECUNDÁRIO DA PÁGINA, LADO DIREITO-->
+                <div class="yui-u">
+                  <div class="content">
+                    <center><h2>Informações Importantes:</h2></center>
+                    <hr>
+                    <h4>Alterando uma amostra:</h4> 
+                    Ao lado temos as informações de todas as amostras que estão cadastradas no sistema. Escolha a que deseja alterar e clique no botão que se encontra na mesma linha.
+                    <hr>
+                    <h4>ATENÇÃO!</h4>
+                    Não altere as amostras com a intenção de falsificar, omitir ou esconder informações sobre os poluentes do ar.
+                    <hr>
+                  </div>
+                </div>
+                <!--FIM DO CONTEUDO SECUNDARIO-->
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--FIM DO CONTEUDO PRINCIPAL DA PÁGINA-->
+
+        <!--INICIO DO FOOTER/RODAPÉ DA PÁGINA-->
+        <div id="ft">
+          <div id="footer">
+            <footer>
+              <div class="column">
+                <h3>Menu de Amostras</h3>
+                <ul>
+                <a href="{{ url_for('index')}}">Menu</a>
+                <a href="{{ url_for('cadastrar')}}">Cadastrar</a>
+                <a href="{{ url_for('excluir')}}">Excluir</a>             
+                <a href="{{ url_for('classificacao')}}">Classificar</a>
+                </ul>
+              </div>
+              <div class="column">
+                <h3>Entre em Contato</h3>
+                <p>Email: timepi1@puccampinas.edu.br</p>
+                <p>Telefone: (12) 93456-7890</p>
+                <img src="{{ url_for('static', filename='logo.png') }}" alt="LogoAang">
+              </div>
+            </footer>
+          </div>
+        </div>
+      </div>
+        <center><p>&copy; 2023 Pontificia Universidade Catolica de Campinas. All rights reserved.</p></center>
+      </div>
+    </div>
+    <!--FIM DO RODAPÉ DA PÁGINA-->
+  </body>
+</html>

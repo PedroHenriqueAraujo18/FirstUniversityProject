@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Aang | Cadastrar</title>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}" >
+<meta charset="UTF-8">
+</head>
+<body>
+<div id="doc3" class="yui-t7">
+  <div id="hd">
+    <div id="header">
+      <center>
+        <ul>
+          <a href="{{ url_for('index')}}">Menu</a>
+          <a href="{{ url_for('excluir')}}">Excluir</a>
+          <a href="{{ url_for('alterar')}}">Alterar</a>
+          <a href="{{ url_for('classificacao')}}">Classificar</a>
+          <a href="{{ url_for('sobre')}}">Sobre</a>
+        </ul>
+      </center>
+      <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo Aang" width="170" height="170">
+      <h1>Artmosfera: Cadastrar Amostras</h1>
+    </div>
+  </div>
+  <div id="bd">
+    <div id="yui-main">
+      <div class="yui-b">
+        <div class="yui-gc">
+          <div class="yui-u first">
+            <div class="content-cad">
+              <center>
+                <center>
+                  <h2>Preencha os campos para adicionar nova amostra:</h2>
+                </center>
+                
+                <form class="formAdd" action="/Cadastrar" method="POST" method="GET">
+                  <h3>MP10:</h3>
+                  <input type="text" id="mp10" name="mp10"><br>
+                
+                  <h3>MP2,5:</h3>
+                  <input type="text" id="mp25" name="mp25"><br>
+                
+                  <h3>O3:</h3>
+                  <input type="text" id="o3" name="o3"><br>
+                
+                  <h3>CO:</h3>
+                  <input type="text" id="co" name="co"><br>
+                
+                  <h3>NO2:</h3>
+                  <input type="text" id="no2" name="no2"><br>
+                
+                  <h3>SO2:</h3>
+                  <input type="text" id="so2" name="so2"><br><br>
+                
+                  <center>
+                    <button type="submit"><h4>Adicionar Amostra</h4></button>
+                  </center>
+            </div>
+          </div>
+          <div class="yui-u">
+            <div class="content-cad">
+              <center><h3>Informações sobre cada um dos campos que devem ser preenchidos e seus efeitos à saúde:</h3></center>
+              <hr>
+              <h4>MP10: Partículas Inaláveis</h4> 
+              <p>Definição:</p>
+              <hr>
+              <h4>MP2,5: Partículas Inaláveis Finas</h4>
+              <p>Definição:</p>
+              <hr>
+              <h4>O3: Ozônio</h4> 
+              <p>Definição:</p>
+              <hr>
+              <h4>CO: Monóxido de Carbono</h4>
+              <p>Definição:</p>
+              <hr>
+			  <h4>NO2: Dióxido de Nitrogênio</h4> 
+              <p>Definição:</p>
+              <hr>
+              <h4>SO2: Dióxido de Enxofre</h4>
+              <p>Definição:</p>
+              <hr>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="ft">
+    <div id="footer">
+      <footer>
+        <div class="column">
+          <h3>Menu de Amostras</h3>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="{{ url_for('cadastrar')}}">Adicionar</a></li>
+            <li><a href="{{ url_for('alterar')}}">Alterar</a></li>
+            <li><a href="{{ url_for('excluir')}}">Excluir</a></li>
+            <li><a href="{{ url_for('classificacao')}}">Classificar</a></li>
+          </ul>
+        </div>
+        <div class="column">
+          <h3>Entre em Contato</h3>
+          <p>Email: timepi1@puccampinas.edu.br</p>
+          <p>Telefone: (12) 93456-7890</p>
+          <img src="../static/logo.png" alt="LogoAang">
+        </div>
+      </footer>
+    </div>
+  </div>
+  <center><p>&copy; 2023 Pontificia Universidade Catolica de Campinas. All rights reserved.</p></center>
+</div>
+</body>
+</html>
